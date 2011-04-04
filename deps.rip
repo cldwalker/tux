@@ -1,0 +1,3 @@
+ripl >=0.3.4
+ripl-rack >=0.1.0
+sinatra >=1.2.1
