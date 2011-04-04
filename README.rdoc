@@ -1,0 +1,79 @@
+== Description
+Tux dresses up sinatra for interactive use. Use it to interact with your helpers, view rendering and
+your app's response objects. Tux also gives you commands to view your app's routes and settings.
+
+== Install
+Install the gem with:
+
+    gem install tux
+
+== Usage
+
+To interact with your helpers:
+
+    $ tux.uri
+    >> app.my_helper_method
+    ...
+
+To interact with any built-in sinatra methods i.e. request and response specific helper
+methods:
+
+    # depends on request
+    >> app.uri '/'
+    => "http://:/"
+
+    # depends on response
+    >> app.headers
+    => {"Content-Type"=>"text/html"}
+
+For the above to work, tux sets up default empty request and response objects. To try the helpers
+with your own requests and responses:
+
+    >> app.request = Sinatra::Request.new({})
+    >> app.response = Sinatra::Response.new
+
+To interact with your views:
+
+    >> app.erb :my_template
+    => 'template rendered'
+
+Tux also comes with commands to give you a good overview of your app
+
+    $ tux
+    >> routes
+    HEAD  "/"
+    HEAD  /book/:id
+    GET   "/"
+    GET   /book/:id
+
+    >> settings
+    absolute_redirects  true
+    add_charset         [/^text\//, "application/javascript", "application/xml",
+    "application/xhtml+xml"]
+    app_file            "./sample.rb"
+    bind                "0.0.0.0"
+    default_encoding    "utf-8"
+    dump_errors         true
+    empty_path_info     nil
+    environment         :development
+    lock                false
+    logging             false
+    method_override     false
+    port                4567
+    prefixed_redirects  false
+    public              "/my/path/public"
+    raise_errors        false
+    reload_templates    true
+    root                "/my/path"
+    run                 false
+    running             false
+    server              ["thin", "mongrel", "webrick"]
+    session_secret      "XXX"
+    sessions            false
+    show_exceptions     true
+    static              true
+    views               "/my/path/views"
+
+== TODO
+* Better integration with ripl-rack
+* Tests
