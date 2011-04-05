@@ -3,4 +3,5 @@
 require 'tux'
 require 'tux/rack'
 require 'tux/runner'
+require 'ripl/multi_line' unless ENV['NO_RIPL_MULTI_LINE']
 Tux::Runner.run
