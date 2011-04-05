@@ -1,5 +1,3 @@
-require 'ripl'
-
 module Tux
   module Commands
     SETTINGS = %w{methodoverride inline_templates}
@@ -45,4 +43,3 @@ module Tux
     end
   end
 end
-Ripl::Commands.include Tux::CommandsFormatted, Tux::Commands

@@ -1,5 +1,7 @@
-require 'tux/commands'
+require 'ripl'
 require 'tux/version'
+require 'tux/commands'
+Ripl::Commands.include Tux::CommandsFormatted, Tux::Commands
 
 module Tux
   def self.app_class

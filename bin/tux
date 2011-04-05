@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 
-require 'ripl'
-require 'ripl/rack'
 require 'tux'
+require 'tux/rack'
 require 'tux/runner'
 Tux::Runner.run
