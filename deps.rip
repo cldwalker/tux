@@ -1,3 +1,4 @@
-ripl >=0.3.4
-ripl-rack >=0.1.0
+ripl >=0.3.5
+ripl-rack >=0.2.0
+ripl-multi_line >=0.2.4
 sinatra >=1.2.1
