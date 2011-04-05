@@ -1,2 +1,7 @@
+== 0.2.0
+* Add -c option
+* Add better ripl-rack integration
+* Add multi-line support
+
 == 0.1.0
 * Initial release!
