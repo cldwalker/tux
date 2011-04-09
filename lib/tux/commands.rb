@@ -11,7 +11,7 @@ module Tux
     end
 
     def settings
-      meths = (class << Tux.app_class; self; end).instance_methods(false).
+      meths = (Tux.app_class.methods(false) + Sinatra::Base.methods(false)).
         sort.map(&:to_s).select {|e| e[/=$/] }.map {|e| e[0..-2] } - SETTINGS
       meths.map {|meth| [meth, Tux.app_class.send(meth)] }
     end
