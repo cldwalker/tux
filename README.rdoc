@@ -111,6 +111,3 @@ Tux also comes with commands to give you a good overview of your app
 Since tux is a {ripl shell}[http://github.com/cldwalker/ripl], tux is highly configurable. You can
 create tux commands in the format tux-COMMAND and enhance your shell by adding ripl plugins to
 ~/.riplrc. Read {ripl's readme}[http://github.com/cldwalker/ripl#readme] for more.
-
-== TODO
-* Tests

@@ -4,8 +4,10 @@ module Tux
 
     def routes
       Tux.app_class.routes.inject([]) {|arr, (k,v)|
-        arr += v.map {|e|
-          [k, (str = e[0].inspect[%r{/\^(.*)\$/}, 1]) ? str.tr('\\', '') : e[0]]
+        arr += v.map {|regex,params,*|
+          path = params.empty? ? regex.inspect :
+            params.inject(regex.inspect) {|s,e| s.sub(/\([^()]+\)/, ":#{e}") }
+          [k, (str = path[%r{/\^(.*)\$/}, 1]) ? str.tr('\\', '') : path]
         }
       }
     end
@@ -13,7 +15,7 @@ module Tux
     def settings
       meths = (Tux.app_class.methods(false) + Sinatra::Base.methods(false)).
         sort.map(&:to_s).select {|e| e[/=$/] }.map {|e| e[0..-2] } - SETTINGS
-      meths.map {|meth| [meth, Tux.app_class.send(meth)] }
+      meths.map {|meth| [meth, (Tux.app_class.send(meth) rescue $!.inspect)] }
     end
 
     def app
