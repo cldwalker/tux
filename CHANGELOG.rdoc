@@ -1,3 +1,9 @@
+== 0.3.0
+* Add tests
+* Fix 1.9 settings bug
+* Fix routes params
+* Fix failing settings
+
 == 0.2.0
 * Add -c option
 * Add better ripl-rack integration
