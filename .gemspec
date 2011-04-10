@@ -17,6 +17,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'ripl-rack', '>= 0.2.0'
   s.add_dependency 'ripl-multi_line', '>= 0.2.4'
   s.add_dependency 'sinatra', '>= 1.2.1'
+  s.add_development_dependency 'bacon', '>= 1.1.0'
+  s.add_development_dependency 'bacon-bits', '>= 0.1.0'
   s.files = Dir.glob(%w[{lib,test}/**/*.rb bin/* [A-Z]*.{txt,rdoc} ext/**/*.{rb,c} **/deps.rip]) + %w{Rakefile .gemspec}
   s.extra_rdoc_files = ["README.rdoc", "LICENSE.txt"]
   s.license = 'MIT'
