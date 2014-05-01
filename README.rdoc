@@ -49,7 +49,7 @@ To interact with your views:
     >> app.markdown
     ...
 
-Tux let's you you make requests and interact with rack response objects thanks to
+Tux lets you make requests and interact with rack response objects thanks to
 {rack-test}[https://github.com/brynary/rack-test]:
 
     >> get '/'
