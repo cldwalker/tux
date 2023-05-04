@@ -5,7 +5,7 @@ module Tux
     def routes
       Tux.app_class.routes.inject([]) {|arr, (k,v)|
         arr += v.map {|regex,params,*|
-          path = params.empty? ? regex.inspect :
+          path = params.empty? ? regex.to_s :
             params.inject(regex.inspect) {|s,e| s.sub(/\([^()]+\)/, ":#{e}") }
           [k, (str = path[%r{/\^(.*)\$/}, 1]) ? str.tr('\\', '') : path]
         }
